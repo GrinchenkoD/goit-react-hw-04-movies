@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 class MoviesList extends Component {
 
     render() {
-        const { movies, match } = this.props;
+        const { movies, } = this.props;
         console.log(this.props)
         return (
             <div>
