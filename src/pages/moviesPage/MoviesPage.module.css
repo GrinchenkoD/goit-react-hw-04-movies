@@ -1,0 +1,78 @@
+.form{
+       
+    margin:30px ;
+}
+
+.input{
+    width: 300px;
+    height: 40px;
+    background-color: #3f3f3f;
+    margin-right: 20px;
+    color: #8739f9;
+    font-size: 20px;
+    outline: none;
+    border: 2px solid #8739f9;
+    border-radius: 10px;
+    padding: 3px 20px;
+}
+.input:focus{
+    border-color: #c651cd;
+}
+
+.searchBtn{
+    background-color: #8739f9;
+    color: rgba(256, 256, 256, 0.8);
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    outline: none;
+}
+.searchBtn:active{
+    background-color: #c651cd;
+}
+.thumb{
+    margin: 0 auto;
+    padding:20px;
+
+}
+.title{
+    text-align: center;
+    font-size: 30px;
+    color:rgba(256, 256, 256, 0.9);
+    margin-bottom: 30px;
+
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.item{
+    width: 300px;
+    padding-bottom: 20px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.link{
+font-size: 20px;
+color:#8739f9;
+}
+.link:visited{
+    color:#c651cd;
+}
+
+.poster{
+    width: 300px;
+    height: 450px;
+}
+.textTumb{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.name{
+    align-self: center;
+}

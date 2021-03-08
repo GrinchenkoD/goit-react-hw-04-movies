@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { Link, Route, Switch } from 'react-router-dom'
+import { NavLink, Route, Switch } from 'react-router-dom'
 import { searchByID } from '../../services/moviesApi'
 import placeholder from "../../images/placeholder.png"
 import Cast from '../../components/cast/Cast'
 import Reviews from '../../components/reviews/Reviews'
+import styles from "./MovieDetailsPage.module.css"
 
 export default class MovieDetailsPage extends Component {
     state = {
@@ -49,46 +50,43 @@ export default class MovieDetailsPage extends Component {
         return (
 
             <>
-                <div>
-                    <div>
-                        <button type="button" onClick={this.handleGoBack} >Go back</button>
+                <button type="button" onClick={this.handleGoBack} className={styles.backBtn}>Go back</button>
+                <div className={styles.detailsThumb}>
 
-                        <img src={poster_path ? currentImgUrl : placeholder} alt={`${title} poster`} />
-                    </div>
-                    <div>
-                        <h2>{title}</h2>
-                        <p>User score: {vote_average * 10}%</p>
-                        <h3>Overview</h3>
-                        <p>{overview}</p>
-                        <h3>Genres</h3>
-                        <p>{genres?.map((genre) => <span key={genre.id}>{genre.name} </span>)}</p>
+                    <img src={poster_path ? currentImgUrl : placeholder}
+                        alt={`${title} poster`} className={styles.poster} />
+
+                    <div className={styles.textContainer}>
+                        <h2 className={styles.title}>{title}</h2>
+                        <p className={styles.undertitle}>User score: {vote_average * 10}%</p>
+                        <h3 className={styles.undertitle}>Overview</h3>
+                        <p className={styles.text}>{overview}</p>
+                        <h3 className={styles.undertitle}>Genres</h3>
+                        <p className={styles.text}>{genres?.map((genre) => <span key={genre.id}>{genre.name} </span>)}</p>
+
+                        <ul>
+                            <li>
+                                <NavLink to={{
+                                    pathname: `${match.url}/cast`,
+                                    state: {
+                                        from: this.props.location.state?.from,
+                                        query: this.props.location.state?.query
+                                    }
+                                }} className={styles.link} activeClassName={styles.linkActive}>Cast</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to={{
+                                    pathname: `${match.url}/reviews`,
+                                    state: {
+                                        from: this.props.location.state?.from,
+                                        query: this.props.location.state?.query
+                                    }
+                                }} className={styles.link} activeClassName={styles.linkActive}>Reviews</NavLink>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <div>
-                    <ul>
-                        <li>
-                            <Link to={{
-                                pathname: `${match.url}/cast`,
-                                state: {
-                                    from: this.props.location.state?.from,
-                                    query: this.props.location.state?.query
-                                }
-                            }}>Cast</Link>
-                        </li>
-                        <li>
-                            <Link to={{
-                                pathname: `${match.url}/reviews`,
-                                state: {
-                                    from: this.props.location.state?.from,
-                                    query: this.props.location.state?.query
-                                }
-                            }}>Reviews</Link>
-                        </li>
-                    </ul>
-
-
-                </div>
                 <Switch>
                     <Route
                         path={`${match.path}/cast`}

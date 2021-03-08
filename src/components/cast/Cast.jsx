@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { searchCast } from '../../services/moviesApi';
 import placeholder from "../../images/placeholder.png"
+import styles from "./Cast.module.css"
 
 
 
@@ -23,22 +24,26 @@ export default class Cast extends Component {
 
 
         return (
-            <div>
-                <h2>Cast</h2>
+            <>
+                <h2 className={styles.header}>Cast</h2>
+                <div className={styles.thumb}>
 
-                {cast.map((actor) => {
+                    {cast.map((actor) => {
 
-                    return (<div key={actor.id} >
-                        <img src={actor.profile_path ? `${baseImgUrl}${actor.profile_path}` : placeholder}
-                            alt={` ${actor.name} `} width="100" />
-                        <h3>{actor.name}</h3>
-                        <p>Character: {actor.character}</p>
-                    </div>)
-                }
-                )
-                }
+                        return (<div key={actor.id} className={styles.actorContainer}>
+                            <img src={actor.profile_path ? `${baseImgUrl}${actor.profile_path}` : placeholder}
+                                alt={` ${actor.name} `} className={styles.photo} />
+                            <div className={styles.info}>
+                                <h3 className={styles.name}>{actor.name}</h3>
+                                <p className={styles.char}>Character: {actor.character}</p>
+                            </div>
+                        </div>)
+                    }
+                    )
+                    }
 
-            </div>
+                </div>
+            </>
         )
     }
 }

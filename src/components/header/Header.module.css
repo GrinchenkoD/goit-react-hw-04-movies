@@ -1,7 +1,24 @@
-.navLink{
+.nav{
+    display: block;
+    border-bottom: 1px solid gray;
+    padding: 25px 40px;
+    background-color: #100F10;
 
 }
 
+.list{
+    display: flex;
+}
+.item:not(:last-child){
+    margin-right: 20px;
+
+}
+
+.navLink{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.9)
+}
+
 .activeNavLink{
-    
+    color: #8739f9;
 }
