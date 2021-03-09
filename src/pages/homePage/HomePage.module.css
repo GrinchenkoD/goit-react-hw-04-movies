@@ -5,8 +5,8 @@
 }
 .title{
     text-align: center;
-    font-size: 30px;
-    color:rgba(256, 256, 256, 0.9);
+    font-size: 35px;
+    color:rgba(256, 256, 256, 0.7);
     margin-bottom: 30px;
 
 }
@@ -23,8 +23,12 @@
     background-color: rgba(255, 255, 255, 0.1);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+      transition: 250ms linear;
 }
-.link{
+.item:hover{
+    transform: scale(1.1);
+}
+.link{  
 font-size: 20px;
 color:#8739f9;
 }

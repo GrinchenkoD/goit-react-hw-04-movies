@@ -35,14 +35,15 @@ ul{
 }
 
 .lds-spinner {
+  margin-top: 100px;
   
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 320px;
+  height: 320px;
 }
 .lds-spinner div {
-  transform-origin: 40px 40px;
+  transform-origin: 120px 120px;
   animation: lds-spinner 1.2s linear infinite;
 }
 .lds-spinner div:after {
@@ -50,9 +51,9 @@ ul{
   display: block;
   position: absolute;
   top: 3px;
-  left: 37px;
-  width: 6px;
-  height: 18px;
+  left: 100px;
+  width: 21px;
+  height: 62px;
   border-radius: 20%;
   background: #8739f9;
 }
