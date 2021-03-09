@@ -1,9 +1,6 @@
 import React, { Suspense, lazy } from 'react'
 import { Route, Switch, } from "react-router-dom"
-// import HomePage from "../../pages/homePage"
-// import MovieDetailsPage from '../../pages/movieDetailsPage/MovieDetailsPage'
-// import MoviesPage from '../../pages/moviesPage/MoviesPage'
-// import NotFound from '../../pages/notFound'
+
 import Loader from "../../components/loader"
 
 const HomePage = lazy(() => import('../../pages/homePage' /*webpackChunkName: "home-page" */))
