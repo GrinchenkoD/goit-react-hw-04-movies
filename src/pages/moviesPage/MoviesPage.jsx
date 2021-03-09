@@ -60,7 +60,6 @@ export default class MoviesPage extends Component {
                         type="text"
                         value={query}
                         onChange={this.handleChange}
-                        autoFocus
                         className={styles.input}
                         placeholder="Enter movie name"
                     />

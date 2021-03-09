@@ -16,9 +16,21 @@
 
 .navLink{
     font-size: 30px;
-    color: rgba(255, 255, 255, 0.9)
+    /* color: rgba(255, 255, 255, 0.9); */
+    color: #8739f9;
 }
 
 .activeNavLink{
-    color: #8739f9;
+    color: #c651cd;
+}
+.activeNavLink::after{
+    content: "";
+    display: block;
+    
+
+    height: 4px;
+    width: 100%;
+    background-color: #c651cd;
+    border-radius: 10px;
+
 }

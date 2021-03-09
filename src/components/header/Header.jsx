@@ -7,7 +7,7 @@ function Header() {
         <nav className={styles.nav}>
             <ul className={styles.list}>
                 <li className={styles.item}>
-                    <NavLink to="/" className={styles.navLink} activeClassName={styles.activeNavLink}>HOME</NavLink>
+                    <NavLink exact to="/" className={styles.navLink} activeClassName={styles.activeNavLink}>HOME</NavLink>
                 </li>
                 <li>
                     <NavLink to="/movies" className={styles.navLink} activeClassName={styles.activeNavLink}>MOVIES</NavLink>
