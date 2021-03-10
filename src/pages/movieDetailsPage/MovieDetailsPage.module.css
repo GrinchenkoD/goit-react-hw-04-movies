@@ -5,13 +5,13 @@
 
 }
 .backBtn{
-    margin-top: 30px;
+    margin-top: 20px;
     margin-left: 30px;
     display: block;
     background-color: #8739f9;
     color: rgba(256, 256, 256, 0.8);
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: 18px;
+    padding: 10px 15px;
     border-radius: 15px;
     outline: none;
 
@@ -20,28 +20,28 @@
     background-color: #c651cd;
 }
 .poster{
-    width: 400px;
+    width: 300px;
 
 }
 .textContainer{
     margin: 0 50px;
 }
 .title{
-    font-size: 40px;
+    font-size: 30px;
     color: rgba(256, 256, 256, 0.9);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
 }
 .undertitle{
     color: rgba(256, 256, 256, 0.7);
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .text{
     margin-bottom: 20px;
     color: rgba(256, 256, 256, 0.5);
-    font-size: 20px;
+    font-size: 16px;
 }
 .link{
     display: block;

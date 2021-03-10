@@ -39,6 +39,9 @@ export default class MoviesPage extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        if (!this.state.query) {
+            return
+        }
         // ===========================================
         this.props.history.push({
             pathname: this.props.location.pathname,
