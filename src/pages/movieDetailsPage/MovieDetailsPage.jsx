@@ -28,6 +28,7 @@ export default class MovieDetailsPage extends Component {
     }
 
     handleGoBack = () => {
+        console.log(this.props)
         this.props.location.state?.from && this.props.location.state?.query ?
             this.props.history.push({
                 pathname: this.props.location.state.from,
@@ -45,6 +46,7 @@ export default class MovieDetailsPage extends Component {
         const baseImgUrl = "https://image.tmdb.org/t/p/w500";
         const currentImgUrl = `${baseImgUrl}${poster_path}`;
         const { movieId } = this.props.match.params;
+        console.log(this.props)
 
 
         return (

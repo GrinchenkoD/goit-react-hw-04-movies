@@ -50,8 +50,7 @@ export default class MoviesPage extends Component {
     render() {
         const { query, movies } = this.state;
         const { match } = this.props
-        console.log(match)
-
+        console.log(match.url)
         return (
             <>
                 <form onSubmit={this.handleSubmit} className={styles.form}>
@@ -64,7 +63,7 @@ export default class MoviesPage extends Component {
                     />
                     <button type="submit" className={styles.searchBtn} >Search</button>
                 </form>
-                {!!movies.length && <MoviesList movies={movies} url={match.url} />}
+                {!!movies.length && <MoviesList movies={movies} url={match.url} query={query} />}
             </>
         )
     }

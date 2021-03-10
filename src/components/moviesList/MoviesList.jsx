@@ -1,16 +1,26 @@
 import React from 'react'
 import styles from "./MoviesList.module.css"
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import placeholder from "../../images/placeholder.png"
 
 const baseImgUrl = "https://image.tmdb.org/t/p/w500"
 
-const MoviesList = ({ movies, url = "/movies" }) => {
+const MoviesList = ({ movies, url = "/movies", location, query }) => {
     return (
         <ul className={styles.list}>
             {movies.map(movie =>
                 <li key={movie.id} className={styles.item} >
-                    <Link to={`${url}/${movie.id}`} className={styles.link}>
+                    <Link to={{
+                        pathname: `${url}/${movie.id}`,
+                        state: {
+                            from: location.pathname,
+                            query: query,
+                        },
+
+                    }}
+                        className={styles.link}
+                    >
+
                         <img src={movie.poster_path ? `${baseImgUrl}${movie.poster_path}` : placeholder}
                             alt="movie poster" className={styles.poster} />
                         <div className={styles.textTumb}>
@@ -19,9 +29,10 @@ const MoviesList = ({ movies, url = "/movies" }) => {
                             </p>
                         </div>
                     </Link>
-                </li>)}
-        </ul>
+                </li>)
+            }
+        </ul >
     )
 }
 
-export default MoviesList
+export default withRouter(MoviesList)
