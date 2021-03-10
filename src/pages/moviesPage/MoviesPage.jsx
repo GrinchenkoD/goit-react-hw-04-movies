@@ -50,7 +50,7 @@ export default class MoviesPage extends Component {
     render() {
         const { query, movies } = this.state;
         const { match } = this.props
-        console.log(match.url)
+
         return (
             <>
                 <form onSubmit={this.handleSubmit} className={styles.form}>
